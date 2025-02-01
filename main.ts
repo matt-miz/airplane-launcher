@@ -23,7 +23,9 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    active = !(active)
+    active = true
+    basic.pause(5000)
+    active = false
 })
 let mode = 0
 let active = false
@@ -31,7 +33,7 @@ let graph = 0
 graph = 1
 active = false
 mode = 0
-let speedA = 0
+let speedA = 768
 let offsetB = 0
 pins.analogSetPeriod(AnalogPin.P14, 20000)
 pins.analogWritePin(AnalogPin.P13, 0)
