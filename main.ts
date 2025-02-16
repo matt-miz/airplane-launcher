@@ -1,3 +1,8 @@
+function run () {
+    active = true
+    basic.pause(5000)
+    active = false
+}
 input.onButtonPressed(Button.A, function () {
     if (mode == 0) {
         speedA += -64
@@ -22,10 +27,11 @@ input.onButtonPressed(Button.B, function () {
         offsetB += 8
     }
 })
+input.onPinPressed(TouchPin.P1, function () {
+    run()
+})
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    active = true
-    basic.pause(5000)
-    active = false
+    run()
 })
 let mode = 0
 let active = false
